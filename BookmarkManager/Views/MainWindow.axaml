@@ -21,7 +21,13 @@
         <vm:MainWindowViewModel/>
     </Design.DataContext>
 
-	<Grid>
+	<Grid ShowGridLines="True">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="26" />
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="Auto" />
+		</Grid.RowDefinitions>
 		
 		<Menu Grid.Row="1">
 			<MenuItem Header="FILE">
@@ -36,10 +42,10 @@
 		</Menu>
 		
 		
-		<TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+		<TextBlock Grid.Row="2" Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
 
-		<Button Content="Save" Command="{Binding SaveUrlCommand}" >
+		<Button Grid.Row="3" Content="Save" Command="{Binding SaveUrlCommand}" >
 			<PathIcon Data="{StaticResource save_regular}" />
 		</Button>
 		
